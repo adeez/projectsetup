@@ -5,8 +5,14 @@ createFolders <- function (prj) {
     pathed <- paste0("./",prj)
     print(pathed)
     status <- path.expand(pathed) 
+    if (dir.exists(status)==T) {      # check if the project folder has been initialized
+      print("Project folder was manually created")
+    }
+    else{
+      print("Creating the project folder")
+      dir.create(path = status)
+        }
     if (status!=paste(pathed,"data",sep = "/")) {  # check if folders have been initialized, if not create all project folders
-      print("Go on")
       loc <- paste(pathed,"data",sep = "/")
       dir.create(loc,showWarnings = T)
       print("successfully created folder data")
