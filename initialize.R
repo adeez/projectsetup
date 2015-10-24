@@ -52,9 +52,11 @@ createFolders <- function (prj) {
         }
 }
 
-
-
 #createFolders("Project")
+
+loadProject <- function (){source('lib/boot.R')}   # After checking it will load the libraries and datasets
+
+
 
 
 
