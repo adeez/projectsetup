@@ -6,12 +6,12 @@ createFolders <- function (prj) {
     print(pathed)
     status <- path.expand(pathed) 
     if (dir.exists(status)==T) {      # check if the project folder has been initialized
-      print("Project folder was manually created")
+      return(print("Project folder was already created"))
     }
     else{
       print("Creating the project folder")
       dir.create(path = status)
-        }
+        
     if (status!=paste(pathed,"data",sep = "/")) {  # check if folders have been initialized, if not create all project folders
       loc <- paste(pathed,"data",sep = "/")
       dir.create(loc,showWarnings = T)
@@ -49,8 +49,10 @@ createFolders <- function (prj) {
       file.create(loc)
       print("Created a TODO text file")
     }
-    
+        }
 }
+
+
 
 #createFolders("Project")
 
